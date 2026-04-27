@@ -1,0 +1,35 @@
+{
+  "name": "bloglist-sql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node --test --test-concurrency=1 tests/api_ch3.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoandradej/bloglist-sql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/leoandradej/bloglist-sql/issues"
+  },
+  "homepage": "https://github.com/leoandradej/bloglist-sql#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.20.0",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "axios": "^1.15.2",
+    "nodemon": "^3.1.14"
+  }
+}
