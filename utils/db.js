@@ -3,6 +3,7 @@ const { DATABASE_URL } = require("./config");
 
 const sequelize = new Sequelize(DATABASE_URL, {
   dialect: "postgres",
+  dialectOptions: false,
 });
 
 const connectToDatabase = async () => {
