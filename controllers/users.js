@@ -24,14 +24,28 @@ router.post("/", async (req, res, next) => {
 });
 
 router.get("/:id", async (req, res) => {
+  const where = {};
+
+  if (req.query.read !== undefined) {
+    where.read = req.query.read === "true";
+  }
+
   const user = await User.findByPk(req.params.id, {
     attributes: { exclude: ["passwordHash"] },
+    include: {
+      model: Blog,
+      as: "readings",
+      attributes: { exclude: ["userId"] },
+      through: {
+        attributes: ["read", "id"],
+        where,
+      },
+    },
   });
-  if (user) {
-    res.json(user);
-  } else {
-    res.status(404).end();
-  }
+
+  if (!user) return res.status(404).end();
+
+  res.json(user);
 });
 
 router.put("/:username", async (req, res, next) => {

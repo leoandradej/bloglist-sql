@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "node --test --test-concurrency=1 tests/api_ch3.test.js"
+    "migration:down": "node utils/rollback.js",
+    "test": "node --test --test-concurrency=1"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.20.0",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "umzug": "^3.8.2"
   },
   "devDependencies": {
     "axios": "^1.15.2",
